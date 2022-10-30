@@ -2,11 +2,11 @@ package edu.umb.cs681.hw07;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-public class RunnableCancellablePrimeGenerator extends RunnablePrimeGenerator {
+public class PrimeGenerator extends RunnablePrimeGenerator {
 	private boolean done = false;
 	private ReentrantLock lock = new ReentrantLock();
 	
-	public RunnableCancellablePrimeGenerator(long from, long to) {
+	public PrimeGenerator(long from, long to) {
 		super(from, to);
 	}
 	
@@ -38,7 +38,7 @@ public class RunnableCancellablePrimeGenerator extends RunnablePrimeGenerator {
 	}
 
 	public static void main(String[] args) {
-		RunnableCancellablePrimeGenerator gen = new RunnableCancellablePrimeGenerator(1,100);
+		PrimeGenerator gen = new PrimeGenerator(1,100);
 		Thread thread = new Thread(gen);
 		thread.start();
 		gen.setDone();
