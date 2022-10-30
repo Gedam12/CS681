@@ -69,5 +69,43 @@ public class Car {
     public void setDominationCount(int dominationCount) {
         this.dominationCount = dominationCount;
     }
+public int medianPrice(List<Cars> cars) {
+	Collections.sort(cars, new SortByPrice());
+	int n = cars.size();
+	if(n%2==0) {
+		return cars.get((n/2));
+	} else {
+		return (cars.get(n/2) + cars.get(n/2))/2;
+	}
+}
 
+public int medianYear(List<Cars> cars) {
+	Collections.sort(cars, new SortByYear());
+	int n = cars.size();
+	if(n%2==0) {
+		return cars.get((n/2));
+	} else {
+		return (cars.get(n/2) + cars.get(n/2))/2;
+	}
+}
+
+public float medianMieleage(List<Cars> cars) {
+	Collections.sort(cars, new SortByMieleage());
+	int n = cars.size();
+	if(n%2==0) {
+		return cars.get((n/2));
+	} else {
+		return (cars.get(n/2) + cars.get(n/2))/2;
+	}
+}
+
+public int medianDominationCount(List<Cars> cars) {
+	Collections.sort(cars, new SortByDominationCount());
+	int n = cars.size();
+	if(n%2==0) {
+		return cars.get((n/2));
+	} else {
+		return (cars.get(n/2) + cars.get(n/2))/2;
+	}
+}
 }
