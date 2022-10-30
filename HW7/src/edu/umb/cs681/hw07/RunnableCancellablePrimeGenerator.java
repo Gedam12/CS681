@@ -24,7 +24,7 @@ public class RunnableCancellablePrimeGenerator extends RunnablePrimeGenerator {
 			lock.lock();
 			try {
 				if(done){
-					System.out.println("Stopped generating primes.");
+					System.out.println("Prime generation stopped...");
 					this.primes.clear();
 					break;
 					
@@ -40,7 +40,7 @@ public class RunnableCancellablePrimeGenerator extends RunnablePrimeGenerator {
 	}
 
 	public static void main(String[] args) {
-		RunnableCancellablePrimeGenerator gen = new RunnableCancellablePrimeGenerator(1,100);
+		RunnableCancellablePrimeGenerator gen = new RunnableCancellablePrimeGenerator(1,10000000000);
 		Thread t1 = new Thread(gen);
 		t1.start();
 		gen.setDone();
