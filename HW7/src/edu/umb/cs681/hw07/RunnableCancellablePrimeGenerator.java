@@ -29,7 +29,9 @@ public class RunnableCancellablePrimeGenerator extends RunnablePrimeGenerator {
 					break;
 					
 				}
-				if( isPrime(n) ){ this.primes.add(n); }
+				if(isPrime(n)){ 
+					this.primes.add(n); 
+				}
 			}
 			finally {
 				lock.unlock();
