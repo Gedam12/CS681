@@ -2,22 +2,17 @@ package edu.umb.cs681.hw10;
 
 import java.util.LinkedList;
 
-// Generates prime factors of a given number (dividend)
-// Prime factors are generated in the range of 2 and dividend
-// from:	lower bound of the range (2)
-// to:		upper bound of the range (dividend)
-
 public class PrimeFactorizer {
 	protected long dividend, from, to;
 	protected LinkedList<Long> factors = new LinkedList<Long>();
 	
 	public PrimeFactorizer(long dividend){
-		if(dividend >= 2){
+		if(dividend >= 3){
 			this.dividend = dividend;
-			this.from = 2;
+			this.from = 3;
 			this.to = dividend;
 		}else{
-			throw new RuntimeException("dividend must be >= 2. dividend==" + dividend);
+			throw new RuntimeException("dividend must be >= 3. dividend==" + dividend);
 		}
 	}
 
@@ -27,14 +22,14 @@ public class PrimeFactorizer {
 	public LinkedList<Long> getPrimeFactors(){ return factors; }
 	
 	public void generatePrimeFactors() {
-		long divisor = 2;
+		long divisor = 3;
 	    while( dividend != 1 && divisor <= to ){
 		    if(dividend % divisor == 0) {
 		        factors.add(divisor);
 		        dividend /= divisor;
 		    }else {
-		    	if(divisor==2){ divisor++; }
-		    	else{ divisor += 2; }
+		    	if(divisor==3){ divisor++; }
+		    	else{ divisor += 3; }
 		    }
 		}
 	}
@@ -45,13 +40,13 @@ public class PrimeFactorizer {
 		fac.generatePrimeFactors();
 		System.out.println(fac.getPrimeFactors());
 		
-		System.out.print("Prime factors of 17: ");
-		fac = new PrimeFactorizer(17);
+		System.out.print("Prime factors of 27: ");
+		fac = new PrimeFactorizer(27);
 		fac.generatePrimeFactors();
 		System.out.println(fac.getPrimeFactors());
 
-		System.out.print("Prime factors of 131: ");
-		fac = new PrimeFactorizer(131);
+		System.out.print("Prime factors of 75: ");
+		fac = new PrimeFactorizer(75);
 		fac.generatePrimeFactors();
 		System.out.println(fac.getPrimeFactors());
 		
@@ -60,18 +55,18 @@ public class PrimeFactorizer {
 		fac.generatePrimeFactors();
 		System.out.println(fac.getPrimeFactors());
 		
-		System.out.print("Prime factors of 125: ");
-		fac = new PrimeFactorizer(125);
+		System.out.print("Prime factors of 144: ");
+		fac = new PrimeFactorizer(144);
 		fac.generatePrimeFactors();
 		System.out.println(fac.getPrimeFactors());
 		
-		System.out.print("Prime factors of 2489: ");
-		fac = new PrimeFactorizer(2489);
+		System.out.print("Prime factors of 489: ");
+		fac = new PrimeFactorizer(489);
 		fac.generatePrimeFactors();
 		System.out.println(fac.getPrimeFactors());
 		
-		System.out.print("Prime factors of 8633: ");
-		fac = new PrimeFactorizer(8633);
+		System.out.print("Prime factors of 864: ");
+		fac = new PrimeFactorizer(864);
 		fac.generatePrimeFactors();
 		System.out.println(fac.getPrimeFactors());	
 	}
