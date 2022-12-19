@@ -1,4 +1,4 @@
-package edu.umb.cs681.hw16;
+package edu.umb.cs681.hw17;
 
 public class StockQuoteObservable extends Observable {
 
