@@ -2,16 +2,18 @@ package edu.umb.cs681.hw10;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-public class RunnableCancellablePrimeFactorizer extends RunnablePrimeFactorizer {
+public class Runnable CancellablePrimeFactorizer extends Runnable PrimeFactorizer 
 
+{
     private boolean done = false;
     private ReentrantLock lock = new ReentrantLock();
 
-    public RunnableCancellablePrimeFactorizer(long dividend, long from, long to) {
+    public Runnable CancellablePrimeFactorizer(long dividend, long from, long to) {
         super(dividend, from, to);
     }
 
-    public void setDone() {
+    public void setDone() 
+    {
         lock.lock();
         try {
             done = true;
