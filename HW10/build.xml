@@ -5,7 +5,7 @@
   on a shell. 
 -->
 
-<project name="hw01" basedir="."  default="run">
+<project name="hw10" basedir="."  default="run">
 	<property environment="env"/>
 	<echo message="ANT_HOME: ${env.ANT_HOME}" />
 
@@ -30,12 +30,12 @@
 	<target name="compile" depends="init">
 		<javac srcdir="${src}" destdir="${bin}" includeAntRuntime="no">
 			<classpath refid="classpath"/>
-			<include name="edu/umb/cs681/hw07/*.java"/>
+			<include name="edu/umb/cs681/hw10/*.java"/>
 		</javac>
 	</target>
 
 	<target name="run" depends="compile">
-		<java classname="edu.umb.cs681.hw07.RunnableCancellablePrimeFactorizer"
+		<java classname="edu.umb.cs681.hw10.RunnableCancellablePrimeFactorizer"
 			  classpathref="classpath"
 			  fork="true"/>
 	</target>
@@ -43,7 +43,7 @@
 	<target name="clean" depends="run">
 		<delete includeemptydirs="true">
 			<fileset dir="${bin}"/>
-			<!-- fileset dir="${test.bin}/edu/umb/cs680/junit5intro" includes="**/*" /-->
+			<!-- fileset dir="${test.bin}/edu/umb/cs681/junit5intro" includes="**/*" /-->
 		</delete>
 	</target>
 
